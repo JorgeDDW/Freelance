@@ -17,4 +17,4 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 
-window.Noty = requier("noty")
+window.Noty = require("noty")
