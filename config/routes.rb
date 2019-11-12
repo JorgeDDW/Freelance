@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get '/dashboard', to: 'users#dashboard'
+  post 'user/edit', to: 'users#update'
   root 'pages#home'
   devise_for :users, path: '', 
               path_names: {sign_up: 'register', sign_in: 'login',
