@@ -15,6 +15,7 @@
  */
 
  @import 'bulma';
+ @import 'bulma/bulma';
  @import 'bulma-extensions';
  @import 'noty/lib/noty';
  @import 'noty/lib/themes/sunset';
