@@ -44,7 +44,7 @@
                                     <div class="media">
                                         <div class="media-content">From</div>
                                         <div class="media-right">
-                                            <strong><%= current_user.from %></strong><i class="toggle far fa-edit" arial-control="user-from"></i>
+                                            <strong><%= current_user.from %></strong><i class="toggle far fa-edit" aria-controls="user-from"></i>
                                         </div>
                                     </div>
                                     <div class="content">
@@ -53,7 +53,7 @@
                                                 <%= f.text_field :from, autofocus: true, autocomplete: 'form', class: "input" %>
                                         
                                             </div>
-                                            <a class="toggle button is-light" arial-controls="user-from">Cancel</a>
+                                            <a class="toggle button is-light" aria-controls="user-from">Cancel</a>
                                             <%= f.submit 'Save', class:'button is-danger'%>
                                         <%end%>
                                     </div>
@@ -65,7 +65,7 @@
                                     <div class="media">
                                         <div class="media-content">Status</div>
                                             <div class="media-right">
-                                                <strong><% if current_user.status %> Online <%else%> Offline <%end%></strong><i class="toggle far fa-edit" arial-controls="user-status"></i>
+                                                <strong><% if current_user.status %> Online <%else%> Offline <%end%></strong><i class="toggle far fa-edit" aria-controls="user-status"></i>
                                             </div>
                                         </div>
                                         <div class="content">
@@ -73,7 +73,7 @@
                                                 <div class="field">
                                                     <%= f.select(:status, options_for_select(["Online", true],["Offline", false]),{}, {class:"select is-fullwidth"})%>                                            
                                                 </div>
-                                                <a class="toggle button is-light" arial-controls="user-from">Cancel</a>
+                                                <a class="toggle button is-light" aria-controls="user-from">Cancel</a>
                                                 <%= f.submit 'Save', class:'button is-danger'%>
                                             <%end%>
                                     
@@ -91,11 +91,53 @@
                             <div class="card-content">
 
                                 <!-- About -->
-                                <article></article>
+                                <article>
+                                     <div class="media">                                     
+                                        <div class="media-content">
+                                            <p><strong>About Yourself</strong></p>
+                                            <br>
+                                            <%= current_user.about%>
+                                        </div>
+                                        <div class="media-right">
+                                            <i class="toggle far fa-edit" aria-controls="user-about"></i>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <%= form_for :user, url: user_edit_url(@user), action: :update, method: :post, html: {id: 'user-about', class:'is-hidden'}  do |f|%>
+                                            <div class="field">
+                                                <%= f.text_area :about, autofocus: true, autocomplete: 'form', class: "input" %>
+                                        
+                                            </div>
+                                            <a class="toggle button is-light" aria-controls="user-about">Cancel</a>
+                                            <%= f.submit 'Save', class:'button is-danger'%>
+                                        <%end%>
+                                    </div>
+                                </article>
                                 <hr class="h-10">
 
                                 <!-- Languages -->
-                                <article></article>
+                                <article>
+                                   <div class="media">                                     
+                                        <div class="media-content">
+                                            <p><strong>Language</strong></p>
+                                            <br>
+                                            <%= current_user.language%>
+                                        </div>
+                                        <div class="media-right">
+                                            <i class="toggle far fa-edit" aria-controls="user-language"></i>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <%= form_for :user, url: user_edit_url(@user), action: :update, method: :post, html: {id: 'user-language', class:'is-hidden'}  do |f|%>
+                                            <div class="field">
+                                                <%= f.text_field :language, autofocus: true, autocomplete: 'form', class: "input" %>
+                                        
+                                            </div>
+                                            <a class="toggle button is-light" aria-controls="user-about">Cancel</a>
+                                            <%= f.submit 'Save', class:'button is-danger'%>
+                                        <%end%>
+                                    </div>
+                                </article>
                                 <hr class="h-10">
                                 
                                 <!-- Linked Account -->
