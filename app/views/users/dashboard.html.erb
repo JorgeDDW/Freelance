@@ -145,7 +145,18 @@
                                 <hr class="h-10">
                                 
                                 <!-- Linked Account -->
-                                <article class="media"></article>
+                                <article class="media">
+                                    <div class="content">
+                                        <p><Strong>Linked Account</Strong><br>
+                                        <% if current_user.uid %>
+                                            <span class="has-text-success">Facebook Verified</span>
+                                        <%else%>
+                                            <%= link_to 'Connect to Facebook', user_facebook_omniauth_authorize_path, method: :post, class: "has-text-danger" %>
+                                        <%end%>
+                                        </p>
+                                    </div>
+                            
+                                </article>
 
                             </div>
                         </div>
