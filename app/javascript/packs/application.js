@@ -26,3 +26,6 @@ $(document).ready(() => {
         $('#' + e.target.getAttribute('aria-controls')).toggleClass('is-hidden');
     })
 })
+
+require("trix")
+require("@rails/actiontext")
