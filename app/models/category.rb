@@ -1,3 +1,3 @@
-class Category < 
+class Category < ApplicationRecord
     has_many :gigs
 end

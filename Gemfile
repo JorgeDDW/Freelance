@@ -37,6 +37,8 @@ gem 'omniauth-facebook', '~> 5.0'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
 gem "omniauth-rails_csrf_protection"
 
+gem 'faker', '=1.9.3'
+
 
 
 group :development, :test do
