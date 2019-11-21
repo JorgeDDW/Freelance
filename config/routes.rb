@@ -8,7 +8,12 @@ Rails.application.routes.draw do
 
 
 
-  resources :gigs
+  resources :gigs do
+    member do
+      delete :delete_photo
+      post :upload_photo
+    end
+  end
 
   devise_for :users, path: '', 
               path_names: {sign_up: 'register', sign_in: 'login',
