@@ -20,7 +20,7 @@ require("channels")
 window.Noty = require("noty")
 window.Dropzone = require("dropzone")
 
-$(document).ready(() => {
+$(document).on('turbolinks:load',() => {
     $('.toggle').on('click', (e) => {
         e.stopPropagation();
         e.preventDefault();
