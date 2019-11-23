@@ -16,9 +16,11 @@ $sides: (top, bottom, left, right);
   }
 
   .p-#{$space} {
-    padding: #{$space}px !important;
+    font-size: #{$space}px !important;
   }
-
+  .f-#{$space} {
+    margin: #{$space}px !important;
+  }
   .h-#{$space}{
     margin-top: #{$space}px !important;
     margin-bottom: #{$space}px !important;
