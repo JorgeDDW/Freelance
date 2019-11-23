@@ -27,7 +27,7 @@
 
 
     <div class="navbar-end">
-      <a class="navbar-item">Post Gig</a>
+      <%= link_to 'Post Gig', new_gig_path, class:"navbar-item" %>
       <a class="navbar-item">Browse Gigs</a>
       <% if (!user_signed_in?)%>
         <div class="navbar-item">
