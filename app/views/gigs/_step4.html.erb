@@ -12,7 +12,7 @@
 
         <div class="columns is-multiline" style: width: 100%></div>
             <% @gig.photos.each do |photo| %>
-                <div class="column is-one-fifith">
+                <div class="column is-one-fifth">
                     <div class="div card is-image">
                         <div class="card-image">
                             <%= link_to 'Remove', delete_photo_gig_url(photo_id: photo.id, id: @gig.id,
@@ -36,7 +36,7 @@
     Dropzone.options.myDropzone = {
         paramName: "file",
         maxFilesize: 2,
-        acceptedFiles: "images/*",
+        acceptedFiles: "image/*",
         init: function(){
             this.on('complete', function (file){
                 location.reload();
