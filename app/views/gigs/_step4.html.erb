@@ -4,7 +4,7 @@
         <%= f.text_field :video, autocomplete: "Video URL", class: "input"%>
    </div>
    <div class="field">
-    <label for="" class="label">Build your Gig Gallery</label>
+        <label for="" class="label">Build your Gig Gallery</label>
         <div class="control">
             <div class="m-b-20">
                 <div class="dropzone" id="myDropzone" action="/gigs/<%= @gig.id %>/upload_photo"></div>
@@ -29,6 +29,7 @@
                     </div>
                 <%end%>
             </div>
+        </div>
     </div>
 </div>
 
