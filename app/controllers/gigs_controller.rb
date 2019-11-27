@@ -5,11 +5,10 @@ class GigsController < ApplicationController
   before_action :set_gig, except: [:new, :create]
   before_action :is_authorised, only: [:edit, :update, :upload_photo, :delete_photo]
   before_action :set_step, only: [:update, :edit]
-  before_action :set_category, only: [:new, :show, :edit]
+  before_action :set_category, only: [:new, :edit, :show ]
 
   def new
     @gig = current_user.gigs.build
-    
   end
 
   def create
@@ -24,6 +23,7 @@ class GigsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all
   end
 
   def update
