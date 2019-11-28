@@ -31,8 +31,9 @@
                                 <%= o.status.capitalize%>
                             </span>
                         </td>
-                                                <td><%= link_to 'Mark Completed', nil, class:"button is-small is-primary #{'is-hidden' if o.completed?}"%></td>
-
+                        <td>
+                            <%= link_to 'Mark Completed', complete_order_path(o), method: :put, class: "button is-small is-primary #{'is-hidden' if o.completed?}" %>
+                        </td>
                     </tr>
 
                 <%end%>

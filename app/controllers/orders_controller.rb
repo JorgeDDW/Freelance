@@ -24,6 +24,18 @@ class OrdersController < ApplicationController
         
     end
     
+    def complete
+        @order = Order.find(params[:id])
+
+        if !@order.completed?
+            if @order.completed!
+                flash[:notice] = "Saved..."
+            end
+        else
+                flash[:alert] = "Something went wroing..."
+        end
+        redirect_to request.referrer
+    end
     
 
     private
@@ -43,9 +55,5 @@ class OrdersController < ApplicationController
         else
             flash[:alert] = order.errors.full_messages.join(', ')
         end
-    end
-    
-
-
-    
+    end    
 end
