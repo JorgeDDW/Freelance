@@ -21,9 +21,15 @@ class RequestsController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update
+    if @request.update(request_params)
+      redirect_to requests_path, notice: "Saved..."
+    else
+      redirect_to request.referrer, flash: {error: @request.errors.full_messages.join(', ')}
+    end
   end
 
   def show
