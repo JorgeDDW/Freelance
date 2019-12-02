@@ -1,4 +1,4 @@
-# Create dummy catetories
+# # Create dummy catetories
 10.times do
     Category.create(
         name: Faker::Job.unique.field
@@ -21,5 +21,18 @@ end
         io: image = open("https://i.pravatar.cc/300"),
         filename: "avatar#{user.id}.jpg", 
         content_type: 'image/jpg'
+    )
+end
+
+10.times do
+    random_user = User.all.sample(1)[0]
+    category = Category.all.sample(1)[0]
+    request = Request.create(
+        title: Faker::Job.title,
+        description: Faker::Quote.matz,
+        budget: Faker::Number.between(5, 50),
+        delivery: Faker::Number.between(1, 10),
+        user_id: random_user.id,
+        category_id: category.id
     )
 end
