@@ -1,6 +1,7 @@
 class Request < ApplicationRecord
   belongs_to :user
   belongs_to :category
+  has_many :offers, dependent: :delete_all
 
   has_one_attached :attachment_file
 
