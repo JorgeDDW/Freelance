@@ -6,7 +6,24 @@ class OffersController < ApplicationController
 
 
     def create
-        
+        req = Request.find(offer_params[:request_id])
+
+        if req && req.user_id == current_user.id
+            redirect_to reqeust.refferer, alert: "You Cannont offer your own Request."
+        end
+
+        if Offer.exists?(user_id: current_user.id, request_id: offer_params[:request_id])
+            redirect_to request.referrer, aler: "You can make only one offer at the moment."
+        end
+
+        @offer = current_user.offers.build(offer_params)
+
+        if @offer.save
+            redirect_to request.referrer, notice: "Saved..."
+        else
+            redirect_to request.referrer, flash: {error: @offer.errors.full_messages.join(', ')}
+        end
+
     end
     
     def accept
