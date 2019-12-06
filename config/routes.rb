@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/buying_orders', to: 'orders#buying_orders'
   get '/all-request', to: 'requests#list'
   post '/offers', to: 'offers#create'
+  get '/request_offers/:id', to:'requests#offers', as: 'request_offers'
 
   put '/orders/:id/complete', to: 'orders#complete', as: 'complete_order'
 
