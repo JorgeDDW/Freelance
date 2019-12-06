@@ -1,7 +1,7 @@
 class RequestsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_request, except: [:new,:create, :index, :list]
-  before_action :is_authorised, only: [:edit, :update, :destroy]
+  before_action :is_authorised, only: [:edit, :update, :destroy, :offers]
   before_action :set_categories, only: [:new, :edit, :list]
 
   def index
@@ -51,6 +51,10 @@ class RequestsController < ApplicationController
       @requests = Request.all
       
     end
+  end
+
+  def offers
+    @offers = @request.offers
   end
 
   private
