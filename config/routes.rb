@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   get '/request_offers/:id', to:'requests#offers', as: 'request_offers'
 
   put '/orders/:id/complete', to: 'orders#complete', as: 'complete_order'
-
+  put '/offers/:id/accept', to: 'offers#accept', as: "accept_offer"
+  put '/offers/:id/rejected', to: 'offers#reject', as: "reject_offer"
 
   resources :gigs do
     member do
