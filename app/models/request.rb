@@ -4,6 +4,8 @@ class Request < ApplicationRecord
   has_many :offers, dependent: :delete_all
 
   has_one_attached :attachment_file
+  has_many :offers, dependent: :delete_all
+  has_many :orders
 
   validates :title, presence: { message: "Cannot be Empty."}
   validates :description, presence: { message: "Cannot be Empty."}
